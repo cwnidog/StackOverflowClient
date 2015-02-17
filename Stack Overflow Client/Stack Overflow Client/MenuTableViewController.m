@@ -29,9 +29,11 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
+  // try to get the token from user defaults
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   NSString *token = [userDefaults stringForKey:@"token"];
   
+  // if we haven't got a token, we need to get one from StackOverflow, open up a web view & get it
   if (!token)
   {
     WebOAuthViewController *webOAuthController = [[WebOAuthViewController alloc] init];

@@ -35,14 +35,17 @@
   
   if ([url.description containsString:@"access_token"])
   {
+    // parse the URL for the token
     NSArray *components = [[url description] componentsSeparatedByString:@"="];
     NSString *token = components.lastObject;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
+    // save the token in user defaults
     [userDefaults setObject:token forKey:@"token"];
     [userDefaults synchronize];
-    [self dismissViewControllerAnimated:true completion:nil];
     
+    // close the web view
+    [self dismissViewControllerAnimated:true completion:nil];
   } // if containsString
   
   decisionHandler(WKNavigationActionPolicyAllow);
