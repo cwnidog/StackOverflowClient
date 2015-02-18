@@ -34,16 +34,16 @@
 - (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
   [[StackOverflowService sharedService] fetchQuestionsWithSearchTerm:searchBar.text completionHandler:^(NSArray *results, NSString *error) {
-    if (!results.count)
+    if ([results count] == 0)
     {
       // lifted from StackOverflow - somehow seems appropriate
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ResultsError" message:@"Got no results for search string - erase search string and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Results" message:@"Stack Overflow returned no results for search target - please try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
       [alert show];
     }
     self.questions = results;
     if (error)
     {
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ResultsError" message:@"Got error getting questions." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ResultsError" message:@"Received an unspecified error getting questions." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
       [alert show];
     } // if error
     [self.tableView reloadData];
