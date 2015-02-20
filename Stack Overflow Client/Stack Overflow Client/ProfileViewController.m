@@ -120,10 +120,7 @@
   [self.bronzeCountTextField setText: bronzeStr];
   [self.silverCountTextField setText: silverStr];
   [self.goldCountTextField setText: goldStr];
-  
-  // update the text display
-  [self.view setNeedsDisplay];
-  
+    
 } // updateProfileDisplay
 
 - (void)dealloc
