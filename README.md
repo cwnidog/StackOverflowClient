@@ -24,4 +24,6 @@ Lifted code on putting up an AlertView from StackOverflow.
 * Create a profile view controller that shows the logged in users stack overflow information
 * Disable arc on the profile view controller. you will need to use manual-retain-release practices for this VC
 
-As my user account at Stack Overflow had no questions associated with it, the "items" array in the returned JSON data for the /me/questions?order=desc&sort=activity&site=stackoverflow request is empty and there's no real data to display. this is the same for all the other "me" commands. So, Brad OK'd just implementing the Search and My Profile commands.
+## Questions
+-------------
+* As my user account at Stack Overflow had no questions associated with it, the "items" array in the returned JSON data for the /me/questions?order=desc&sort=activity&site=stackoverflow request is empty and there's no real data to display. this is the same for all the other "me" commands. So, Brad OK'd just implementing the Search and My Profile commands.
