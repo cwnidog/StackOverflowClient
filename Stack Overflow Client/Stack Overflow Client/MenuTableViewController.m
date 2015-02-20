@@ -29,7 +29,8 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-  // try to get the token from user defaults
+  [super viewDidAppear:animated];
+  // try to get the token for Stack Overflow API access from user defaults
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   NSString *token = [userDefaults stringForKey:@"token"];
   
@@ -43,12 +44,18 @@
   } // if !token
 } // viewDidAppear()
 
+// select an option by clicking on it, app will display that option's view
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  [self.delegate menuOptionSelected:indexPath.row];
+} // didSelectRowAtIndexPath
+
 #pragma mark - Table view data source
 
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
     
     // Configure the cell...
     

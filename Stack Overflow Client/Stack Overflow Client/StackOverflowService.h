@@ -13,5 +13,7 @@
 + (id) sharedService;
 - (void) fetchQuestionsWithSearchTerm:(NSString *)searchTerm completionHandler: (void (^) (NSArray *results, NSString *error)) completionHandler;
 - (void) fetchUserImage:(NSString *)avatarURL completionHandler: (void (^) (UIImage *image)) completionHandler;
+- (void) fetchProfile: (void (^)(NSArray *, NSString *))completionHandler;
+
 
 @end
