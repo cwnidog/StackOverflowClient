@@ -10,6 +10,8 @@
 
 @implementation Question
 
+
+// pull the profile data from the received JSON dictionary
 + (NSArray *)questionsFromJSON:(NSData *)jsonData
 {
   NSError *error;
@@ -27,6 +29,7 @@
   // parse the JSON data for the queustion and user photos
   for (NSDictionary *item in items)
   {
+    // pull the relevant fields out of the dictionary
     Question *question = [[Question alloc] init];
     question.title = item[@"title"];
     NSDictionary *userInfo = item[@"owner"];
