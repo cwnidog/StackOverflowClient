@@ -42,32 +42,33 @@
   [self.view addSubview: self.scrollView];
   
   // Create the displayName label
+ 
   self.displayNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 50, self.view.frame.origin.y + 50, 200, 50)];
   [self.displayNameLabel setText:@"Display Name"];
-  [self.view addSubview:self.displayNameLabel];
+  [self.scrollView addSubview:self.displayNameLabel];
   
   // Create badgeCount labels
   self.bronzeCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 50, self.view.frame.origin.y + 100, 200, 50)];
   [self.bronzeCountLabel setText:@"Bronze Count:"];
-  [self.view addSubview:self.bronzeCountLabel];
+  [self.scrollView addSubview:self.bronzeCountLabel];
   
   self.silverCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 50, self.view.frame.origin.y + 150, 200, 50)];
   [self.silverCountLabel setText:@"Silver Count:"];
-  [self.view addSubview:self.silverCountLabel];
+  [self.scrollView addSubview:self.silverCountLabel];
   
   self.goldCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 50, self.view.frame.origin.y + 200, 200, 50)];
   [self.goldCountLabel setText:@"Gold Count:"];
-  [self.view addSubview:self.goldCountLabel];
+  [self.scrollView addSubview:self.goldCountLabel];
   
   // Create badgeCount text fields
   self.bronzeCountTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, self.view.frame.origin.y + 100, 200, 50)];
-  [self.view addSubview:self.bronzeCountTextField];
+  [self.scrollView addSubview:self.bronzeCountTextField];
   
   self.silverCountTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, self.view.frame.origin.y + 150, 200, 50)];
-  [self.view addSubview:self.silverCountTextField];
+  [self.scrollView addSubview:self.silverCountTextField];
   
   self.goldCountTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, self.view.frame.origin.y + 200, 200, 50)];
-  [self.view addSubview:self.goldCountTextField];
+  [self.scrollView addSubview:self.goldCountTextField];
   
   self.scrollView.delegate = self;
   
